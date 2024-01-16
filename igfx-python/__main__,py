@@ -1,0 +1,25 @@
+from Vector3 import Vector3, Point
+
+if __name__ == '__main__':
+    # Create a PPM image:
+    width = 200
+    height = 100
+    max_color = 255
+
+    image_file = open('image.ppm', 'w')
+    image_file.write('P3\n')
+    image_file.write('{} {}\n'.format(width, height))
+    image_file.write('{}\n'.format(max_color))
+
+    for j in range(height - 1, -1, -1):
+        for i in range(width):
+            r = float(i) / float(width)
+            g = float(j) / float(height)
+            b = 0.2
+            ir = int(255.99 * r)
+            ig = int(255.99 * g)
+            ib = int(255.99 * b)
+            image_file.write('{} {} {}\n'.format(ir, ig, ib))
+    
+    image_file.close()
+    
