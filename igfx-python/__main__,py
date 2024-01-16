@@ -1,9 +1,10 @@
 from Vector3 import Vector3, Point
+from Color import Color, write_color
 
 if __name__ == '__main__':
     # Create a PPM image:
-    width = 200
-    height = 100
+    width = 256
+    height = 256
     max_color = 255
 
     image_file = open('image.ppm', 'w')
@@ -19,7 +20,7 @@ if __name__ == '__main__':
             ir = int(255.99 * r)
             ig = int(255.99 * g)
             ib = int(255.99 * b)
-            image_file.write('{} {} {}\n'.format(ir, ig, ib))
-    
+            # image_file.write('{} {} {}\n'.format(ir, ig, ib))
+            write_color(image_file, Color(r, g, b))
+
     image_file.close()
-    

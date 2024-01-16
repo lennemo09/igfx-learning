@@ -5,12 +5,13 @@ class Vector3:
         self.x = x
         self.y = y
         self.z = z
+        self.vector = [x, y, z]
 
     def __neg__(self):
         return Vector3(-self.x, -self.y, -self.z)
     
     def __getitem__(self, i):
-        return self.e[i]
+        return self.vector[i]
     
     def __setitem__(self, i, value):
         self.e[i] = value
